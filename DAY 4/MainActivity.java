@@ -1,4 +1,4 @@
-package com.example.mydemoapp;
+package com.example.mycalc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Calculater extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
     EditText edit1,edit2;
     Button button1, button2, button3, button4, button5;
     TextView textView1, textView2, textView3, textView4;
@@ -17,7 +17,7 @@ public class Calculater extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calculater);
+        setContentView(R.layout.activity_main);
         edit1 = (EditText)findViewById(R.id.edit1);
         edit2 = (EditText)findViewById(R.id.edit2);
         textView1 = (TextView) findViewById(R.id.textView1);
@@ -28,7 +28,6 @@ public class Calculater extends AppCompatActivity {
         button2 = (Button) findViewById(R.id.button2);
         button3 = (Button) findViewById(R.id.button3);
         button4 = (Button) findViewById(R.id.button4);
-        button5 = (Button) findViewById(R.id.button5);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,7 +37,7 @@ public class Calculater extends AppCompatActivity {
                 int a = Integer.parseInt(num1);
                 int b = Integer.parseInt(num2);
                 int sum = a+b;
-                name1 = "Your Addition is "+sum;
+                name1 = "Answer = "+sum;
                 textView1.setText(name1);
             }
         });
@@ -51,7 +50,7 @@ public class Calculater extends AppCompatActivity {
                 int a = Integer.parseInt(num1);
                 int b = Integer.parseInt(num2);
                 int sub = a-b;
-                name1 = "Your Subtraction is "+sub;
+                name1 = "Answer =  "+sub;
                 textView1.setText(name1);
             }
         });
@@ -64,7 +63,7 @@ public class Calculater extends AppCompatActivity {
                 int a = Integer.parseInt(num1);
                 int b = Integer.parseInt(num2);
                 int mul = a*b;
-                name1 = "Your Multiplication is "+mul;
+                name1 = "Answer =  "+mul;
                 textView1.setText(name1);
             }
         });
@@ -77,31 +76,10 @@ public class Calculater extends AppCompatActivity {
                 int a = Integer.parseInt(num1);
                 int b = Integer.parseInt(num2);
                 float div = a/b;
-                name1 = "Your Division  is "+div;
+                name1 = "Answer = "+div;
                 textView1.setText(name1);
             }
         });
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String num1,num2,name1,name2,name3,name4;
-                num1 = edit1.getText().toString();
-                num2 = edit2.getText().toString();
-                int a = Integer.parseInt(num1);
-                int b = Integer.parseInt(num2);
-                int sum = a+b;
-                int sub = a-b;
-                int mul = a*b;
-                float div = a/b;
-                name1 = "Your Addition is "+sum;
-                name2 = "Your Subtraction is "+sub;
-                name3 = "Your Multiplication is "+mul;
-                name4 = "Your Division  is "+div;
-                textView1.setText(name1);
-                textView2.setText(name2);
-                textView3.setText(name3);
-                textView4.setText(name4);
-            }
-        });
+
     }
 }
